@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Diary;
+use App\Repositories\DiaryRepository;
 use App\Repositories\ReportRepository;
 use Illuminate\Http\Request;
 
@@ -26,6 +28,7 @@ class ReportController extends Controller
             'diaries' => $this->diaries->forUser($request->user(), $date)  // This method ensures only the logged in users diaries are loaded
         ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -92,4 +95,6 @@ class ReportController extends Controller
     {
         //
     }
+
+
 }

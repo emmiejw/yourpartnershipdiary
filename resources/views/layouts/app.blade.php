@@ -54,8 +54,9 @@
                         <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                         {{--<li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>--}}
                     @else
+                        <a href="{{ URL::route('admin.dashboard') }}" class="btn btn-outline-info" style="margin: 10px;">Admin Area</a>
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="margin-top: 10px;">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 

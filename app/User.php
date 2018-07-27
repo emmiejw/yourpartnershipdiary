@@ -26,4 +26,34 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function isAdmin(){
+
+        if($this->is_admin == 1){
+
+            return true;
+
+        }
+        return false;
+    }
+
+    public function diaries(){
+
+
+        return $this->hasMany(Diary::class);
+
+    }
+
+    public function reports(){
+
+
+        return $this->hasMany('App\Report');
+
+
+    }
+
+    public  function forUser(){
+        return $this->hasMany(DiaryRepository::class);
+    }
+
 }

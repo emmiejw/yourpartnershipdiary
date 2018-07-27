@@ -92,7 +92,7 @@ class alertDiaryController extends Controller
             'bg_level' =>'required|max:255',
             'reason_for_bg'=>'required|max:255',
 //
-           ]);
+        ]);
         $diary = Diary::findOrFail($id);
         $diary -> date_bg = $request->get('date_bg');
         $diary -> time_bg = $request->get('time_bg');

@@ -11,9 +11,13 @@
 |
 */
 
+use App\Http\Controllers\alertDiary;
+use App\Admin;
+
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 Route::group(['middleware' => ['web']], function () {
 
@@ -24,5 +28,14 @@ Route::group(['middleware' => ['web']], function () {
     Route::resource('/diaries', 'alertDiaryController');
 
     Route::get('/report', 'ReportController@index')->name('report');
+
+        Route::group(['middleware'=>'admin'], function(){
+
+            Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
+
+            Route::get('/admin/diary', 'AdminController@diary')->name('client.report');
+
+            Route::get('/admin/diary/{id}', 'AdminController@search')->name('search');
+        });
 
 });
