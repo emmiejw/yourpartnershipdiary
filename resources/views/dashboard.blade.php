@@ -9,11 +9,6 @@
                     <div class="card-header"><center><b>Admin Dashboard</b></center></div>
                         <br>
                             <div class="card-body">
-                               <center><b><p>Please enter Clients name to view their Diary:</p></b></center>
-                                <center>
-                                    <i class="fa fa-search"></i>  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search..">
-                                </center>
-
                                     <br>
                                         <table class="table table-responsive-sm table-hover table-bordered">
                                             <thead>
@@ -36,7 +31,7 @@
 
                                             @foreach ($diaries as $diary)
                                                 <tr>
-                                                    <td>{{$diary->user_id}}</td>
+                                                    <td><a href="{{route('search', $diary->user_id)}}">{{$diary->user->name}}</a></td>
                                                     <td>{{$diary->date_bg}}</td>
                                                     <td>{{$diary->time_bg}}</td>
                                                     <td>{{$diary->bg_level}}</td>

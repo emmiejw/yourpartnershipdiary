@@ -35,7 +35,7 @@ Route::group(['middleware' => ['web']], function () {
 
             Route::get('/admin/diary', 'AdminController@diary')->name('client.report');
 
-            Route::get('/admin/diary/{id}', 'AdminController@search')->name('search');
+            Route::get('/admin/diary/{user_id}', 'AdminController@search')->name('search');
         });
 
 });

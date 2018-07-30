@@ -32,7 +32,7 @@ class Diary extends Model
 
 
     public function user(){
-        return $this->belongsTo(User::class)->paginate(15);
+        return $this->belongsTo(User::class);
     }
 
 

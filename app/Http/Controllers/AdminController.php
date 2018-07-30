@@ -37,9 +37,9 @@ class AdminController extends Controller
         return view('dashboard', compact('diaries'));
     }
 
-    public function search(Request $request)
+    public function search($user_id)
     {
-        $diaries = Diary::where('user_id', 2)->get();
+        $diaries = Diary::where('user_id', $user_id)->get();
 
         return view('dashboard', compact('diaries'));
     }
