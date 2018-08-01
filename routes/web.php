@@ -27,6 +27,8 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::resource('/diaries', 'alertDiaryController');
 
+    Route::get('/help', 'HelpController@help')->name('help');
+
     Route::get('/report', 'ReportController@index')->name('report');
 
         Route::group(['middleware'=>'admin'], function(){
@@ -36,6 +38,9 @@ Route::group(['middleware' => ['web']], function () {
             Route::get('/admin/diary', 'AdminController@diary')->name('client.report');
 
             Route::get('/admin/diary/{user_id}', 'AdminController@search')->name('search');
+
+            Route::resource('/admin/trials', 'TrialsController');
+
         });
 
 });

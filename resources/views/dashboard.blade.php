@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12 ">
                 <div class="card">
-                    <div class="card-header"><center><b>Admin Dashboard</b></center></div>
+                    <div class="card-header" style="font-size: 18px;"><center><b>Admin Dashboard</b></center></div>
                         <br>
                             <div class="card-body">
                                     <br>
@@ -47,6 +47,9 @@
                                             @endforeach
                                             </tbody>
                                         </table>
+                                <center>
+                                    {{ $diaries->links() }}
+                                </center>
                             </div>
                     </div>
                 </div>

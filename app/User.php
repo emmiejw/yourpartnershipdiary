@@ -56,4 +56,12 @@ class User extends Authenticatable
         return $this->hasMany(DiaryRepository::class);
     }
 
+    public function trials(){
+
+
+        return $this->hasMany('App\Trials');
+
+
+    }
+
 }

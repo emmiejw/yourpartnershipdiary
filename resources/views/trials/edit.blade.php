@@ -26,7 +26,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12 ">
                 <div class="card">
-                    <div class="card-header" style="font-size: 18px;"><center><b>Your Blood Glucose and Alert Diary</b></center></div>
+                    <div class="card-header"><center><b>Your Blood Glucose and Alert Diary</b></center></div>
                     <br>
                     <center>
                         <a href="{{ URL::route('diaries.index') }}" class="btn btn-info" style="margin-bottom: 10px;">Return to Diary</a>

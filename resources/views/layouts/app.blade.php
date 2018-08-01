@@ -16,6 +16,7 @@
 <!-- Fonts -->
 
     <link rel="icon" type="image/png" href="/images/icon2.png" />
+
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -54,6 +55,8 @@
                         <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                         {{--<li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>--}}
                     @else
+                        <a href="{{ URL::route('help') }}" class="btn btn-outline-info" style="margin: 10px;">Help</a>
+                        <a href="{{ URL::route('diaries.index') }}" class="btn btn-outline-info" style="margin: 10px;">My Diary</a>
                         <a href="{{ URL::route('admin.dashboard') }}" class="btn btn-outline-info" style="margin: 10px;">Admin Area</a>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="margin-top: 10px;">

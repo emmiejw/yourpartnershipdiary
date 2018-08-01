@@ -26,7 +26,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12 ">
                 <div class="card">
-                    <div class="card-header" style="font-size: 18px;"><center><b>Your Blood Glucose and Alert Diary</b></center></div>
+                    <div class="card-header"><center><b>Blood Glucose and Alert Diary</b></center></div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -38,14 +38,14 @@
 
 
                         <center>
-                            <a href="{{ URL::route('diaries.create') }}" class="btn btn-info" style="margin: 10px;"> Add Entry to Diary</a>
-                            <a href="{{ URL::route('report') }}" class="btn btn-info" style="margin: 10px;"> 3 Monthly Diary Report</a>
+                            <a href="{{ URL::route('clinical.create') }}" class="btn btn-info" style="margin: 10px;"> Add Entry to Diary</a>
                         </center>
                             <br>
                         <table class="table table-responsive-sm table-hover table-bordered">
                             <thead>
                             <tr>
                                 <th>Edit</th>
+                                <th>Dog's name/ID</th>
                                 <th>Date of BG</th>
                                 <th>Time of BG</th>
                                 <th>BG Level (mmols)</th>
@@ -63,7 +63,7 @@
 
                             @foreach ($diaries as $diary)
                                 <tr>
-                                    <td><a href="{{route('diaries.edit', $diary->id)}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
+                                    <td><a href="{{route('clinical.show', $diary->dog_name)}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
                                     <td>{{$diary->date_bg}}</td>
                                     <td>{{$diary->time_bg}}</td>
                                     <td>{{$diary->bg_level}}</td>
