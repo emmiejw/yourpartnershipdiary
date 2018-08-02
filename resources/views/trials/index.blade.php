@@ -64,7 +64,7 @@
                             @foreach ($trials as $trial)
                                 <tr>
                                     <td><a href="{{route('trials.edit', $trial->id)}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
-                                    <td>{{$trial->dog_name}}</td>
+                                    <td><a href="{{route('trial.report', $trial->dog_name)}}">{{$trial->dog_name}}</a></td>
                                     <td>{{$trial->date_bg}}</td>
                                     <td>{{$trial->start_time}}</td>
                                     <td>{{$trial->complete_time}}</td>

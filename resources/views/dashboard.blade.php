@@ -7,8 +7,11 @@
             <div class="col-md-12 ">
                 <div class="card">
                     <div class="card-header" style="font-size: 18px;"><center><b>Admin Dashboard</b></center></div>
-                        <br>
                             <div class="card-body">
+                                <center>
+                                    <a href="{{ URL::route('trials.index') }}" class="btn btn-info" style="margin: 10px;"> View Clinical Trials Diary</a>
+                                    <a href="{{ URL::route('users.index') }}" class="btn btn-info" style="margin: 10px;"> Clients Details</a>
+                                </center>
                                     <br>
                                         <table class="table table-responsive-sm table-hover table-bordered">
                                             <thead>

@@ -18,7 +18,7 @@ class CreateTrialsTable extends Migration
             $table->string('dog_name');
             $table->date('date_bg');
             $table->time('start_time');
-            $table->time('complete_time');
+            $table->string('complete_time');
             $table->string('sample_type');
             $table->decimal('sample_level');
             $table->string('alert_type');

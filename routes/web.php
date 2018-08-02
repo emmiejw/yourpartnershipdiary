@@ -41,6 +41,15 @@ Route::group(['middleware' => ['web']], function () {
 
             Route::resource('/admin/trials', 'TrialsController');
 
+            Route::get('/admin/trials/{dog_name}/report', 'trialsReportController@index')->name('trial.report');
+
+            Route::resource('/admin/users', 'userController');
+
+//            Route::get('/admin/users', 'usersController@index')->name('clients');
+//
+//            Route::get('/admin/users/{id}/edit', 'usersController@edit')->name('clients.edit');
+
+
         });
 
 });

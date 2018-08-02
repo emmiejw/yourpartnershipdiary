@@ -31,4 +31,8 @@ class Trials extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    public function trialsReport(){
+        return $this->hasMany(trialsReport::class);
+    }
 }
