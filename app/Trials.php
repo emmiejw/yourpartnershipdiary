@@ -9,17 +9,15 @@ class Trials extends Model
     protected $fillable = [
         'dog_name',
         'date_bg',
-        'time_bg',
-        'bg_level',
-        'reason_for_bg',
-        'treatment',
-        'symptoms',
+        'start_time',
+        'complete_time',
+        'sample_type',
+        'sample_level',
         'alert_type',
-        'reward',
+        'location',
         'activity',
-        'settle',
         'missed_alert',
-        'in_range',
+        'response_decoy',
         'notes',
 
     ];

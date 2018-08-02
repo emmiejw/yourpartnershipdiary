@@ -17,16 +17,16 @@ class CreateTrialsTable extends Migration
             $table->increments('id');
             $table->string('dog_name');
             $table->date('date_bg');
-            $table->time('time_bg');
-            $table->decimal('bg_level');
-            $table->string('reason_for_bg')->nullable();
-            $table->string('treatment')->nullable();
-            $table->string('symptoms')->nullable();
-            $table->string('alert_type')->nullable();
-            $table->string('activity')->nullable();
-            $table->string('missed_alert')->nullable();
-            $table->string('in_range')->nullable();
-            $table->text('notes')->nullable();
+            $table->time('start_time');
+            $table->time('complete_time');
+            $table->string('sample_type');
+            $table->decimal('sample_level');
+            $table->string('alert_type');
+            $table->string('location');
+            $table->string('activity');
+            $table->string('missed_alert');
+            $table->string('response_decoy');
+            $table->text('notes');
             $table->timestamps();
         });
     }

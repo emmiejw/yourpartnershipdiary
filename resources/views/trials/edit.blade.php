@@ -29,7 +29,7 @@
                     <div class="card-header"><center><b>Your Blood Glucose and Alert Diary</b></center></div>
                     <br>
                     <center>
-                        <a href="{{ URL::route('diaries.index') }}" class="btn btn-info" style="margin-bottom: 10px;">Return to Diary</a>
+                        <a href="{{ URL::route('trials.index') }}" class="btn btn-info" style="margin-bottom: 10px;">Return to Diary</a>
 
                     </center>
                     <div class="card-body">
@@ -38,38 +38,41 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                            {!! Form::model($diary,['method'=>'PATCH', 'action'=> ['alertDiaryController@update', $diary->id]]) !!}
+                            {!! Form::model($trial,['method'=>'PATCH', 'action'=> ['TrialsController@update', $trial->id]]) !!}
                             <div class="form-group font-weight-bold">
 
-                                {!! Form::label('date_bg', 'Date of BG:') !!}
+                                {!! Form::label('dog_name', 'Dogs Name/ID:') !!}
+                                {!! Form::text('dog_name', null,[ "class"=>"form-control"])!!}
+
+                                {!! Form::label('date_bg', 'Date of Trial:') !!}
                                 {!! Form::date('date_bg', null, ['class'=>'form-control'])!!}
 
-                                {!! Form::label('time_bg', 'Time of BG:') !!}
-                                {!! Form::time('time_bg', null, ['class'=>'form-control'])!!}
+                                {!! Form::label('start_time', 'Start Time:') !!}
+                                {!! Form::time('start_time', null, ['class'=>'form-control'])!!}
 
-                                {!! Form::label('bg_level', 'Blood Glucose Level:') !!}
-                                {!! Form::number('bg_level', null, ['class'=>'form-control', 'step'=>'0.1'])!!}
+                                {!! Form::label('complete_time', 'Finish within or Abandoned:') !!}
+                                {!! Form::text('complete_time', null, ['class'=>'form-control'])!!}
 
-                                {!! Form::label('reason_for_bg', 'Reason for doing a Blood Test:') !!}
-                                {!! Form::text('reason_for_bg', null,[ "class"=>"form-control"])!!}
+                                {!! Form::label('sample_type', 'Sample Type Used:') !!}
+                                {!! Form::text('sample_type', null,[ "class"=>"form-control"])!!}
 
-                                {!! Form::label('treatment', 'Did you need to take any action?:') !!}
-                                {!! Form::text('treatment', null, ["class"=>"form-control"])!!}
+                                {!! Form::label('sample_level', ' Sample Blood Glucose Level:') !!}
+                                {!! Form::number('sample_level', null, ['class'=>'form-control', 'step'=>'0.1'])!!}
 
-                                {!! Form::label('symptoms', 'How do you feel?:') !!}
-                                {!! Form::text('symptoms',null, ["class"=>"form-control"])!!}
-
-                                {!! Form::label('alert_type', 'Type of Alert:') !!}
+                                {!! Form::label('alert_type', 'Alert Behaviour:') !!}
                                 {!! Form::text('alert_type', null, [ "class"=>"form-control"])!!}
 
-                                {!! Form::label('activity', 'What were you doing?:') !!}
+                                {!! Form::label('location', 'Location of Trial:') !!}
+                                {!! Form::text('location', null, ["class"=>"form-control"])!!}
+
+                                {!! Form::label('activity', 'What was the Dog Doing?:') !!}
                                 {!! Form::text('activity', null, ['class'=>'form-control'])!!}
 
-                                {!! Form::label('missed_alert', 'If your Dog missed an alert, please give details:') !!}
+                                {!! Form::label('missed_alert', 'Did the dog miss the scent?, please give details:') !!}
                                 {!! Form::text('missed_alert', null, ['class'=>'form-control'])!!}
 
-                                {!! Form::label('in_range', 'If your Dog alerted when you was in normal range, please give details:') !!}
-                                {!! Form::text('in_range', null, ['class'=>'form-control'])!!}
+                                {!! Form::label('response_decoy', 'Any Response to Decoy Scent?, please give details:') !!}
+                                {!! Form::text('response_decoy', null, ['class'=>'form-control'])!!}
 
                                 {!! Form::label('notes', 'Notes:') !!}
                                 {!! Form::textarea('notes', null, ['class'=>'form-control'])!!}
@@ -77,7 +80,7 @@
                                 <center>
                                     {!! Form::submit('Update Entry', ['class'=>'btn btn-primary col-sm-3 ']) !!}
                                     {!! Form::close() !!}
-                                    {!! Form::open(['method'=>'DELETE', 'action'=> ['alertDiaryController@destroy', $diary->id]]) !!}
+                                    {!! Form::open(['method'=>'DELETE', 'action'=> ['TrialsController@destroy', $trial->id]]) !!}
                                     <br>
                                     <div class="form-group">
                                         {!! Form::submit('Delete Entry', ['class'=>'btn btn-danger col-sm-3']) !!}

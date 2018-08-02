@@ -26,7 +26,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12 ">
                 <div class="card">
-                    <div class="card-header"><center><b>Blood Glucose and Alert Diary</b></center></div>
+                    <div class="card-header"><center><b>Clinical Trials - Blood Glucose and Alert Diary</b></center></div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -38,50 +38,51 @@
 
 
                         <center>
-                            <a href="{{ URL::route('clinical.create') }}" class="btn btn-info" style="margin: 10px;"> Add Entry to Diary</a>
+                            <a href="{{ URL::route('trials.create') }}" class="btn btn-info" style="margin: 10px;"> Add Entry to Diary</a>
                         </center>
                             <br>
-                        <table class="table table-responsive-sm table-hover table-bordered">
+                        <table class="table table-info table-responsive-sm table-hover table-bordered">
                             <thead>
                             <tr>
                                 <th>Edit</th>
                                 <th>Dog's name/ID</th>
-                                <th>Date of BG</th>
-                                <th>Time of BG</th>
-                                <th>BG Level (mmols)</th>
-                                <th>Reason for BG</th>
-                                <th>Any Treatment needed?</th>
-                                <th>How are you feeling?</th>
-                                <th>Type of alert?</th>
-                                <th>What were you doing at the time?</th>
-                                <th>Did your dog miss the alert?</th>
-                                <th>Did your dog alert when you was in range?</th>
+                                <th>Date of Trial</th>
+                                <th>Start Time</th>
+                                <th>Finish Time</th>
+                                <th>Sample Type Used</th>
+                                <th>Sample BG Level</th>
+                                <th>Alert Behaviour</th>
+                                <th>Location of Trial</th>
+                                <th>What was the Dog Doing?</th>
+                                <th>Did the dog miss the scent?</th>
+                                <th>Any Response to Decoy Scent?</th>
                                 <th>Comments</th>
                             </tr>
                             </thead>
                             <tbody>
 
-                            @foreach ($diaries as $diary)
+                            @foreach ($trials as $trial)
                                 <tr>
-                                    <td><a href="{{route('clinical.show', $diary->dog_name)}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
-                                    <td>{{$diary->date_bg}}</td>
-                                    <td>{{$diary->time_bg}}</td>
-                                    <td>{{$diary->bg_level}}</td>
-                                    <td>{{$diary->reason_for_bg}}</td>
-                                    <td>{{$diary->treatment}}</td>
-                                    <td>{{$diary->symptoms}}</td>
-                                    <td>{{$diary->alert_type}}</td>
-                                    <td>{{$diary->activity}}</td>
-                                    <td>{{$diary->missed_alert}}</td>
-                                    <td>{{$diary->in_range}}</td>
-                                    <td>{{$diary->notes}}</td>
+                                    <td><a href="{{route('trials.edit', $trial->id)}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
+                                    <td>{{$trial->dog_name}}</td>
+                                    <td>{{$trial->date_bg}}</td>
+                                    <td>{{$trial->start_time}}</td>
+                                    <td>{{$trial->complete_time}}</td>
+                                    <td>{{$trial->sample_type}}</td>
+                                    <td>{{$trial->sample_level}}</td>
+                                    <td>{{$trial->alert_type}}</td>
+                                    <td>{{$trial->location}}</td>
+                                    <td>{{$trial->activity}}</td>
+                                    <td>{{$trial->missed_alert}}</td>
+                                    <td>{{$trial->response_decoy}}</td>
+                                    <td>{{$trial->notes}}</td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
                     </div>
                     <div style="align-self: center">
-                        {{ $diaries->links() }}
+                        {{ $trials->links() }}
                     </div>
 
                 </div>
