@@ -7,17 +7,12 @@
                 <div class="card">
                     <div class="card-header" style="font-size: 18px;"><center><b>Blood Glucose and Alert Diary</b></center></div>
                     <br>
-                    <center>
-                        <a href="{{ URL::route('diaries.index') }}" class="btn btn-info" style="margin-bottom: 10px;">Return to Diary</a>
-
-                    </center>
                     <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success">
                                 {{ session('status') }}
                             </div>
                         @endif
-
 
                             {!! Form::open(['method'=>'POST', 'action'=> 'alertDiaryController@store','files'=>true]) !!}
                         <div class="form-group font-weight-bold">

@@ -56,7 +56,6 @@
                                 <th>What was the Dog Doing?</th>
                                 <th>Did the dog miss the scent?</th>
                                 <th>Any Response to Decoy Scent?</th>
-                                <th>Comments</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -75,7 +74,6 @@
                                     <td>{{$trial->activity}}</td>
                                     <td>{{$trial->missed_alert}}</td>
                                     <td>{{$trial->response_decoy}}</td>
-                                    <td>{{$trial->notes}}</td>
                                 </tr>
                             @endforeach
                             </tbody>
