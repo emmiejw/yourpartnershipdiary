@@ -25,6 +25,14 @@
                             <center>
                                 {!! Form::submit('Update Entry', ['class'=>'btn btn-primary col-sm-3 ']) !!}
                                 {!! Form::close() !!}
+                                <br>
+                                <div class="form-group py-2">
+                                        {!! Form::open(['method'=>'DELETE', 'action'=> ['userController@destroy', $user->id]]) !!}
+                                        <br>
+                                        <div class="form-group">
+                                            {!! Form::submit('Delete Entry', ['class'=>'btn btn-danger col-sm-3']) !!}
+                                        </div>
+                                        {!! Form::close() !!}
 
                             </center>
 

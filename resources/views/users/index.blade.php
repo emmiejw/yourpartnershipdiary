@@ -8,6 +8,12 @@
                     <div class="card-header"><center><b>Hypo Hounds Clients and Staff </b></center></div>
                     <div class="card-body">
                         <br>
+                        @if(Session::has('deleted_user'))
+                        <div class="alert alert-danger alert-dismissible">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>Success!</strong> Client record has been deleted successfully!
+                        </div>
+                    @endif
                         <table class="table table-striped table-responsive-sm table-hover table-bordered">
                             <thead>
                             <tr>

@@ -51,7 +51,7 @@
                                             </tbody>
                                         </table>
                                 <center>
-                                    {{ $diaries->links() }}
+                                    {{-- {{ $diaries->links() }} --}}
                                 </center>
                             </div>
                     </div>

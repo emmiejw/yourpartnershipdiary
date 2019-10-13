@@ -76,7 +76,7 @@ class alertDiaryController extends Controller
 
     public function edit($id)
     {
-        $diary = \App\Diary::find($id);
+        $diary = Diary::find($id);
 
 
         return view('diary.edit', compact('diary', $diary));

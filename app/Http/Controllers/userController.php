@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
 class userController extends Controller
@@ -93,6 +94,11 @@ class userController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        $user->delete();
+
+        Session::flash('deleted_user', 'Client deleted');
+        return redirect('/admin/users');
     }
 }

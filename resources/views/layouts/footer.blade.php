@@ -1,2 +1,2 @@
-<center><h3>New Chapter Web Development</h3></center>
-<center><h5>newchapterwebdev@gmail.com</h5></center>
+<center><h3>Created by Emily Wallace - Price</h3></center>
+<center><h5><a href="http://emilywallace-price.co.uk"> www.emilywallace-price.co.uk</a></h5></center>

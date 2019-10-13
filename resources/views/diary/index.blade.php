@@ -1,27 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    @if(Session::has('created_diary'))
-
-        <div class="alert alert-success alert-dismissible">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>Success!</strong> BG & Alert record has been added successfully!
-        </div>
-    @endif
-
-    @if(Session::has('updated_diary'))
-        <div class="alert alert-warning alert-dismissible">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>Success!</strong> BG & Alert record has been updated successfully!
-        </div>
-    @endif
-
-    @if(Session::has('deleted_diary'))
-        <div class="alert alert-danger alert-dismissible">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>Success!</strong> BG & Alert record has been deleted successfully!
-        </div>
-    @endif
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 ">
@@ -29,9 +8,25 @@
                     <div class="card-header" style="font-size: 18px;"><center><b>Your Blood Glucose and Alert Diary</b></center></div>
 
                     <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
+                            @if(Session::has('created_diary'))
+
+                            <div class="alert alert-success alert-dismissible">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Success!</strong> BG & Alert record has been added successfully!
+                            </div>
+                        @endif
+                    
+                        @if(Session::has('updated_diary'))
+                            <div class="alert alert-warning alert-dismissible">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Success!</strong> BG & Alert record has been updated successfully!
+                            </div>
+                        @endif
+                    
+                        @if(Session::has('deleted_diary'))
+                            <div class="alert alert-danger alert-dismissible">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Success!</strong> BG & Alert record has been deleted successfully!
                             </div>
                         @endif
 
