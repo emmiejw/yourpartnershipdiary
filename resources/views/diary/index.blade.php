@@ -61,7 +61,7 @@
                                     <td><a href="{{route('diaries.edit', $diary->id)}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
                                     <td>{{$diary->date_bg}}</td>
                                     <td>{{$diary->time_bg}}</td>
-                                    <td>{{$diary->bg_level}}</td>
+                                    <td>{{number_format($diary->bg_level, 1) }}</td>
                                     <td>{{$diary->reason_for_bg}}</td>
                                     <td>{{$diary->treatment}}</td>
                                     <td>{{$diary->symptoms}}</td>
