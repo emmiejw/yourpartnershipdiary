@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 ">
-                <div class="card">
+                <div class="card pb-4">
                     <div class="card-header" style="font-size: 18px;"><center><b>Your Partnership Diary</b></center></div>
                     <br>
                         <center>
