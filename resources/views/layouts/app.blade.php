@@ -38,8 +38,8 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a href="/diaries">
-                    <h2 style="font-family: 'Poppins', sans-serif; "><b>Your Partnership Diary</b>
-                    </h2>
+                    <h3 style="font-family: 'Poppins', sans-serif; "><b>Your Partnership Diary</b>
+                    </h3>
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
