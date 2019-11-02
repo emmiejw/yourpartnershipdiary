@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
         $user->name = 'Emily Wallace';
         $user->is_admin = '1';
         $user->password = Hash::make('Tyrese1984');
-        $user->email = 'emilyprice1984@outlook.com';
+        $user->email = 'emilyprice84@outlook.com';
         $user->save();
     }
 }

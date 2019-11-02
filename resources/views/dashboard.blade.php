@@ -37,7 +37,7 @@
                                                     <td><a href="{{route('search', $diary->user_id)}}">{{$diary->user->name}}</a></td>
                                                     <td>{{$diary->date_bg}}</td>
                                                     <td>{{$diary->time_bg}}</td>
-                                                    <td>{{number_format($diary->bg_level, 1) }}</td>
+                                                    <td id="BG" style="font-weight:bold;">{{number_format($diary->bg_level, 1) }}</td>
                                                     <td>{{$diary->reason_for_bg}}</td>
                                                     <td>{{$diary->treatment}}</td>
                                                     <td>{{$diary->symptoms}}</td>
