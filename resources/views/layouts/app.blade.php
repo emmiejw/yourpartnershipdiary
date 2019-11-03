@@ -31,14 +31,14 @@
     </style>
 </head>
 
-<body>
+<body style="font-family: Poppins; ">
     <div class="container-fluid"></div>
 
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a href="/diaries">
-                    <h3 style="font-family: 'Poppins', sans-serif; "><b>Your Partnership Diary</b>
+                    <h3 ><b>Your Partnership Diary</b>
                     </h3>
                 </a>
 
@@ -103,15 +103,16 @@
 
     <script>
     
-    (function () {
-        var bg_level=[];
-
-         if (bg_level <=4.9) {
-            document.getElementById("BG").style.color='#EA0A17';
-        }
-    }
-
-    )();
+    // function BG() 
+    // {
+    //      if (bg_level <=5) {
+    //         document.getElementById("BG".style.color = "blue";
+    //     }
+    // }
+//     function myFunction() {
+//   var bg_level = document.getElementById("BG");
+//   bg_level.value = bg_level.value.style.color = 'blue';
+// }
 
     </script>
 </body>
