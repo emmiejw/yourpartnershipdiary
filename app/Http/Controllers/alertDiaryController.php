@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Diary;
-use App\Repositories\DiaryRepository;
 use Illuminate\Http\Request;
+use App\Repositories\DiaryRepository;
 use Illuminate\Support\Facades\Session;
 
 class alertDiaryController extends Controller

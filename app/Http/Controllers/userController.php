@@ -2,22 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
-use Illuminate\Support\Facades\Session;
+use App\User;use App\Diary;
 use Illuminate\Http\Request;
+use App\Repositories\DiaryRepository;
+use App\Repositories\ReportRepository;
+use Illuminate\Support\Facades\Session;
 
 class userController extends Controller
 {
+    protected $diaries;
+
+    public function __construct(ReportRepository $diaries)
+    {
+
+        $this->diaries = $diaries;
+
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Diary $diary)
     {
         $users = User::paginate(20);
 
-        return view('users.index', compact('users'));
+        return view('users.index', compact('users', 'diary'));
     }
 
     /**

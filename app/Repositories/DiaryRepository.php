@@ -18,7 +18,7 @@ class DiaryRepository
 
         return Diary::where('user_id', $user->id)
                     ->orderBy('created_at', 'desc')
-                    ->paginate(10);
+                    ->paginate(25);
     }
 
     public function paginate(){

@@ -17,7 +17,7 @@
                         <table class="table table-striped table-responsive-sm table-hover table-bordered">
                             <thead>
                             <tr>
-                                <th>ID</th>
+                                <th></th>
                                 <th>Name</th>
                                 <th>Admin</th>
                                 <th>Email </th>
@@ -27,8 +27,12 @@
 
                             @foreach ($users as $user)
                                 <tr>
-                                    <td><a href="{{route('users.edit', $user->id)}}">{{$user->id}}</a></td>
-                                    <td>{{$user->name}}</td>
+                                    <td>
+                                        <a href="{{route('users.edit', $user->id)}}" class="btn btn-light border-dark p-1">
+                                             Client Details
+                                          </a>
+                                   </td>
+                                    <td> {{$user->name}}</td>
                                     <td>{{$user->is_admin}}</td>
                                     <td>{{$user->email}}</td>
                                 </tr>

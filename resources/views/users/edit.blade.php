@@ -8,7 +8,12 @@
                     <div class="card-header"><center><b>Hypo Hounds Clients and Staff </b></center></div>
                     <div class="card-body">
                         <center><h1>Client Details</h1></center>
-
+                        <div class="text-center">
+                            <a href="{{route('search', $user->id)}}" 
+                                 class="btn btn-info  text-center">
+                                 View {{ $user->name }}'s Diary
+                            </a>
+                        </div>
                         {!! Form::model($user,['method'=>'PATCH', 'action'=> ['userController@update', $user->id]]) !!}
                         <div class="form-group font-weight-bold">
 
