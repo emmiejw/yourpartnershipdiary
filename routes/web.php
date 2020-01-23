@@ -23,7 +23,9 @@ Route::group(['middleware' => ['web']], function () {
 
     Auth::routes();
 
-    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/', function() {
+        return redirect('/register');
+    });
 
     Route::resource('/diaries', 'alertDiaryController');
 
