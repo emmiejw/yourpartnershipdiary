@@ -36,7 +36,7 @@ class AdminController extends Controller
     public function index()
     {
 
-        $diaries = Diary::paginate(25)->sortByDesc('id');
+        $diaries = Diary::limit(25)->get()->sortByDesc('id');
         $date = Carbon::today()->subDays(90);
         return view('dashboard', compact('diaries', $date)); //all diary entries from all users
     }
