@@ -45,8 +45,7 @@
                         <thead>
                             <tr>
                                 <th>Edit</th>
-                                <th>Date of BG</th>
-                                <th>Time of BG</th>
+                                <th>Date & Time of BG</th>                                
                                 <th>BG Level (mmols)</th>
                                 <th>Reason for BG</th>
                                 <th>Any Treatment needed?</th>
@@ -62,10 +61,12 @@
 
                             @foreach ($diaries as $diary)
                             <tr>
-                                <td><a href="{{route('diaries.edit', $diary->id)}}" class="btn btn-danger"><i
-                                            class="fa fa-edit"></i></a></td>
-                                <td>{{$diary->date_bg}}</td>
-                                <td>{{$diary->time_bg}}</td>
+                                <td><a href="{{route('diaries.edit', $diary->id)}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
+                                <td>
+                                        {{  date('d/m/Y', strtotime($diary->date_bg)) }}
+                                        <br/>
+                                        {{ date('h:i a', strtotime($diary->time_bg)) }}
+                                </td>
                                 <td id="BG" onchange="myFunction()" style="font-weight:bold;">
                                     {{number_format($diary->bg_level, 1) }}</td>
                                 <td>{{$diary->reason_for_bg}}</td>

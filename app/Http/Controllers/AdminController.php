@@ -28,14 +28,14 @@ class AdminController extends Controller
     
     public function index()
     {
-        $diaries = Diary::orderBy('created_at', 'desc') ->paginate(25);
+        $diaries = Diary::orderBy('created_at', 'desc') ->paginate(50);
         return view('dashboard', compact('diaries', $diaries)); 
     }
 
     public function search($user_id)
     {
         $date = Carbon::today()->subDays(90);
-        $diaries = Diary::where('user_id', $user_id)->orderBy('created_at', 'desc')->paginate(25);
+        $diaries = Diary::where('user_id', $user_id)->orderBy('created_at', 'desc')->paginate(50);
         return view('dashboard',compact('diaries', $date)); 
     }
 }
