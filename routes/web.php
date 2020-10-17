@@ -18,11 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::group(['middleware' => ['web']], function () {
 
     Auth::routes();
-
+    
     Route::get('/', function() {
         return redirect('/register');
     });
@@ -46,12 +45,5 @@ Route::group(['middleware' => ['web']], function () {
             Route::get('/admin/trials/{dog_name}/report', 'trialsReportController@index')->name('trial.report');
 
             Route::resource('/admin/users', 'userController');
-
-//            Route::get('/admin/users', 'usersController@index')->name('clients');
-//
-//            Route::get('/admin/users/{id}/edit', 'usersController@edit')->name('clients.edit');
-
-
         });
-
 });

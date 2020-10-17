@@ -21,10 +21,7 @@ class alertDiaryController extends Controller
 
     public function index(Request $request)
     {
-
-        return view('diary.index',[
-            'diaries' => $this->diaries->forUser($request->user())
-        ]);
+        return view('diary.index',[ 'diaries' => $this->diaries->forUser($request->user())]);
     }
 
 
@@ -41,7 +38,6 @@ class alertDiaryController extends Controller
             'time_bg' =>'required|max:255',
             'bg_level' =>'required|max:255',
             'reason_for_bg'=>'required|max:255',
-
         ]);
 
         $request->user()->diaries()->create([
@@ -57,28 +53,21 @@ class alertDiaryController extends Controller
             'in_range' => $request->in_range,
             'notes' => $request->notes,
         ]);
-//
 
         Session::flash('created_diary', 'Your diary entry has been logged');
-
         return redirect('/diaries' );
     }
-
 
     public function show($id)
     {
         $diary = Diary::find($id);
-
-        return View::make('diaries.show')
-            ->with('diary', $diary);
+        return View::make('diaries.show')->with('diary', $diary);
     }
 
 
     public function edit($id)
     {
         $diary = Diary::find($id);
-
-
         return view('diary.edit', compact('diary', $diary));
     }
 
@@ -91,7 +80,6 @@ class alertDiaryController extends Controller
             'time_bg' =>'required|max:255',
             'bg_level' =>'required|max:255',
             'reason_for_bg'=>'required|max:255',
-//
         ]);
         $diary = Diary::findOrFail($id);
         $diary -> date_bg = $request->get('date_bg');
@@ -107,21 +95,15 @@ class alertDiaryController extends Controller
         $diary -> notes = $request->get('notes');
         $diary -> save();
 
-
         Session::flash('updated_diary', 'Your diary entry has been edited');
-
         return redirect('/diaries');
-
     }
 
 
     public function destroy($id)
     {
-
         $diary = Diary::findOrFail($id);
-
         $diary->delete();
-
         Session::flash('deleted_diary', 'Your diary entry has been deleted');
         return redirect('/diaries');
     }

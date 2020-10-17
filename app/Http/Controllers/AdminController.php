@@ -17,36 +17,25 @@ class AdminController extends Controller
 
     public function __construct(ReportRepository $diaries)
     {
-
         $this->diaries = $diaries;
-
     }
 
     public function diary(Request $request)
     {
-        $date = Carbon::today()->subDays(90); //collects the last 90 days worth of diary entries
-
-        return view('reports.create90', [
-            'diaries' => $this->diaries->forUser($request->user(), $date)  // This method ensures only the logged in users diaries are loaded
-
-        ]);
+        $date = Carbon::today()->subDays(90);
+        return view('reports.create90', [ 'diaries' => $this->diaries->forUser($request->user(), $date) ]);
     }
     
-
     public function index()
     {
-
-        $diaries = Diary::limit(25)->get()->sortByDesc('id');
-        $date = Carbon::today()->subDays(90);
-        return view('dashboard', compact('diaries', $date)); //all diary entries from all users
+        $diaries = Diary::orderBy('created_at', 'desc') ->paginate(25);
+        return view('dashboard', compact('diaries', $diaries)); 
     }
 
     public function search($user_id)
     {
         $date = Carbon::today()->subDays(90);
-        $diaries = Diary::where('user_id', $user_id)->paginate(25)->sortByDesc('id');
-        return view('dashboard',compact('diaries', $date)); //diaries for the user that was selected
+        $diaries = Diary::where('user_id', $user_id)->orderBy('created_at', 'desc')->paginate(25);
+        return view('dashboard',compact('diaries', $date)); 
     }
-
-
 }

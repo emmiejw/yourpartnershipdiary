@@ -13,7 +13,7 @@
                                     <a href="{{ URL::route('users.index') }}" class="btn btn-info" style="margin: 10px;"> Clients Details</a>
                                 </center>
                                     <br>
-                                        <table class="table table-responsive-sm table-hover table-bordered">
+                                        <table class="table table-responsive table-hover table-bordered">
                                             <thead>
                                             <tr>
                                                 <th>Client</th>
@@ -51,7 +51,7 @@
                                             </tbody>
                                         </table>
                                 <center>
-                                    {{-- {{ $diaries->links() }} --}}
+                                    {{ $diaries->links() }}
                                 </center>
                             </div>
                     </div>
