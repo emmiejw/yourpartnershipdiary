@@ -22,10 +22,12 @@ class ReportController extends Controller
 
     public function index(Request $request)
     {
-        $date = \Carbon\Carbon::today()->subDays(90); //collects the last 90 days worth of diary entries
+        
+        $date = \Carbon\Carbon::now(); 
+
 
         return view('reports.create90',[
-            'diaries' => $this->diaries->forUser($request->user(), $date)  // This method ensures only the logged in users diaries are loaded
+            'diaries' => $this->diaries->forUser($request->user())->where('created_at','>=', now()->subdays(90)) 
         ]);
     }
 
