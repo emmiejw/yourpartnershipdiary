@@ -23,7 +23,7 @@
                           </ul>
                         </div><br />
                       @endif
-                      
+
                         <form method="post" action="{{ route('diaries.store') }}">
                             @csrf
                             <div class="form-group">    
@@ -38,7 +38,7 @@
                   
                             <div class="form-group">
                                 <label for="bg_level">BG Level:</label>
-                                <input required type="number" class="form-control" name="bg_level"  step="0.1"/>
+                                <input  type="number" class="form-control" name="bg_level"  step="0.1" placeholder="6.5" required/>
                             </div>
                             <div class="form-group">
                                 <label for="reason_for_bg">Reason for BG:</label>
@@ -72,7 +72,7 @@
                                 <label for="notes">If your Dog missed an alert, please give details:</label>
                                 <input type="textarea" class="form-control" name="notes"/>
                             </div>
-                            <button type="submit" class="btn btn-info-outline">Add Record</button>
+                            <button type="submit" class="btn btn-info">Add Record</button>
                         </form>
                 </div>
             </div>

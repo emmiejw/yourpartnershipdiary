@@ -95,7 +95,7 @@
                                 <label for="notes">If your Dog missed an alert, please give details:</label>
                                 <input type="textarea" class="form-control" name="notes" value="{{$diary->notes}}" />
                             </div>
-                            <button type="submit" class="btn btn-info-outline">Update Record</button>
+                            <button type="submit" class="btn btn-info">Update Record</button>
                         </form>
                     </div>
                 </div>

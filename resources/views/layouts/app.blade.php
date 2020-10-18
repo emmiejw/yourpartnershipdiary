@@ -28,6 +28,7 @@
         .background {
             background: linear-gradient(to top left, navy, turquoise, beige);
         }
+}
     </style>
 </head>
 
