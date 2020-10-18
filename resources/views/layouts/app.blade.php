@@ -64,8 +64,10 @@
                         <a href="{{ URL::route('help') }}" class="btn btn-outline-info" style="margin: 10px;">Help</a>
                         <a href="{{ URL::route('diaries.index') }}" class="btn btn-outline-info"
                             style="margin: 10px;">My Diary</a>
-                        <a href="{{ URL::route('admin.dashboard') }}" class="btn btn-outline-info"
-                            style="margin: 10px;">Admin Area</a>
+                        @if(Auth::user()->isAdmin())
+                            <a href="{{ URL::route('admin.dashboard') }}" class="btn btn-outline-info"
+                            style="margin: 10px;">Admin Area</a>    
+                        @endif
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre
