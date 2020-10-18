@@ -38,7 +38,19 @@
                                                             <br/>
                                                             {{ date('h:i a', strtotime($diary->time_bg)) }}
                                                     </td>
-                                                    <td id="BG" style="font-weight:bold;">{{number_format($diary->bg_level, 1) }}</td>
+                                                    @if ($diary->bg_level <= 5)
+                                                        <td id="BG" style="font-weight:bold; color:red;">
+                                                            {{number_format($diary->bg_level, 1) }}
+                                                        </td>
+                                                    @elseif ($diary->bg_level >= 10)
+                                                      <td id="BG" style="font-weight:bold; color:blue;">
+                                                        {{number_format($diary->bg_level, 1) }}
+                                                      </td>
+                                                    @else
+                                                        <td id="BG" style="font-weight:bold;">
+                                                            {{number_format($diary->bg_level, 1) }}
+                                                        </td>                                                    
+                                                    @endif
                                                     <td>{{$diary->reason_for_bg}}</td>
                                                     <td>{{$diary->treatment}}</td>
                                                     <td>{{$diary->symptoms}}</td>
