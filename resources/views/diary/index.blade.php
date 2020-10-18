@@ -31,9 +31,6 @@
                         <strong>Success!</strong> BG & Alert record has been deleted successfully!
                     </div>
                     @endif
-
-
-
                     <center>
                         <a href="{{ URL::route('diaries.create') }}" class="btn btn-info" style="margin: 10px;"> Add
                             Entry to Diary</a>
@@ -58,7 +55,6 @@
                             </tr>
                         </thead>
                         <tbody>
-
                             @foreach ($diaries as $diary)
                             <tr>
                                 <td><a href="{{route('diaries.edit', $diary->id)}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
@@ -96,12 +92,9 @@
                 <div style="align-self: center">
                     {{ $diaries->links() }}
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
 </div>
-
 @stop
