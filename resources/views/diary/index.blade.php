@@ -46,11 +46,11 @@
                                 <th>BG Level (mmols)</th>
                                 <th>Reason for BG</th>
                                 <th>Any Treatment needed?</th>
-                                <th>How are you feeling?</th>
-                                <th>Type of alert?</th>
+                                <th>Symptoms</th>
+                                <th>Type of Alert</th>
                                 <th>What were you doing at the time?</th>
-                                <th>Did your dog miss the alert?</th>
-                                <th>Did your dog alert when you was in range?</th>
+                                <th>Did your Dog miss the alert?</th>
+                                <th>Did your Dog alert when you were in range?</th>
                                 <th>Comments</th>
                             </tr>
                         </thead>
