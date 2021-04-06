@@ -68,7 +68,7 @@
                                 <input type="text" class="form-control" name="reason_for_bg" value="{{ $diary->reason_for_bg }}" />
                             </div>
                             <div class="form-group">
-                                <label for="treatment">Treatment needed:</label>
+                                <label for="treatment">Any Treatment needed?:</label>
                                 <input type="text" class="form-control" name="treatment" value="{{ $diary->treatment }}" />
                             </div>
                             <div class="form-group">
@@ -80,19 +80,19 @@
                                 <input type="text" class="form-control" name="alert_type" value="{{ $diary->alert_type }}" />
                             </div>
                             <div class="form-group">
-                                <label for="activity">What were you doing at the time:</label>
+                                <label for="activity">What were you doing at the time?:</label>
                                 <input type="text" class="form-control" name="activity" value=" {{$diary->activity }} " />
                             </div>
                             <div class="form-group">
-                                <label for="missed_alert">If your Dog missed an alert, please give details:</label>
+                                <label for="missed_alert">Did your Dog miss the alert? Please give details:</label>
                                 <input type="text" class="form-control" name="missed_alert" value="{{$diary->missed_alert}}"/>
                             </div>
                             <div class="form-group">
-                                <label for="in_range">If your Dog alerted when you was in range, please give details:</label>
+                                <label for="in_range">Did your Dog alerted when you was in range? Please give details:</label>
                                 <input type="text" class="form-control" name="in_range" value="{{$diary->in_range }}" />
                             </div>
                             <div class="form-group">
-                                <label for="notes">If your Dog missed an alert, please give details:</label>
+                                <label for="notes">Comments:</label>
                                 <input type="textarea" class="form-control" name="notes" value="{{$diary->notes}}" />
                             </div>
                             <button type="submit" class="btn btn-info">Update Record</button>
