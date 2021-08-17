@@ -12,6 +12,6 @@ class trialsReportController extends Controller
     {
         $date = Carbon::today()->subDays(90);
         $trials = Trials::where('dog_name', $dog_name)->paginate(25);
-        return view('trialsdashboard',compact('trials', $date)); //diaries for the user that was selected
+        return view('trialsdashboard', compact('trials', $date)); //diaries for the user that was selected
     }
 }

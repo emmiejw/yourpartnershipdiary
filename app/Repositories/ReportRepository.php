@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: emily
@@ -7,17 +8,18 @@
  */
 
 namespace App\Repositories;
+
 use App\User;
 use App\Diary;
 
 
 class ReportRepository
 {
-    public function forUser(User $user){
+    public function forUser(User $user)
+    {
 
         return Diary::where('user_id', $user->id)
-                    ->orderBy('created_at', 'desc')
-                    ->get();
+            ->orderBy('created_at', 'desc')
+            ->get();
     }
-
 }

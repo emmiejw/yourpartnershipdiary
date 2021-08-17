@@ -6,11 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class trialsReport extends Model
 {
-    public function trials(){
-
-
+    public function trials()
+    {
         return $this->belongsTo('App\Trials');
-
-
     }
 }

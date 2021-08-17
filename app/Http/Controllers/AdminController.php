@@ -23,19 +23,19 @@ class AdminController extends Controller
     public function diary(Request $request)
     {
         $date = Carbon::today()->subDays(90);
-        return view('reports.create90', [ 'diaries' => $this->diaries->forUser($request->user(), $date) ]);
+        return view('reports.create90', ['diaries' => $this->diaries->forUser($request->user(), $date)]);
     }
-    
+
     public function index()
     {
-        $diaries = Diary::orderBy('created_at', 'desc') ->paginate(50);
-        return view('dashboard', compact('diaries', $diaries)); 
+        $diaries = Diary::orderBy('created_at', 'desc')->paginate(50);
+        return view('dashboard', compact('diaries', $diaries));
     }
 
     public function search($user_id)
     {
         $date = Carbon::today()->subDays(90);
         $diaries = Diary::where('user_id', $user_id)->orderBy('created_at', 'desc')->paginate(50);
-        return view('dashboard',compact('diaries', $date)); 
+        return view('dashboard', compact('diaries', $date));
     }
 }

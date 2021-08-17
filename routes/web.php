@@ -22,7 +22,7 @@ Route::group(['middleware' => ['web']], function () {
 
     Auth::routes();
 
-    Route::get('/', function() {
+    Route::get('/', function () {
         return redirect('/register');
     });
 
@@ -32,14 +32,14 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/report', 'ReportController@index')->name('report');
 
-        Route::group(['middleware'=>'admin'], function(){
+    Route::group(['middleware' => 'admin'], function () {
 
-            Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
+        Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
 
-            Route::get('/admin/diary', 'AdminController@diary')->name('client.report');
+        Route::get('/admin/diary', 'AdminController@diary')->name('client.report');
 
-            Route::get('/admin/diary/{user_id}', 'AdminController@search')->name('search');
+        Route::get('/admin/diary/{user_id}', 'AdminController@search')->name('search');
 
-            Route::resource('/admin/users', 'userController');
-        });
+        Route::resource('/admin/users', 'userController');
+    });
 });

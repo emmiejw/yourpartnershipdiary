@@ -27,41 +27,31 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function isAdmin(){
-
-        if($this->is_admin == 1){
-
+    public function isAdmin()
+    {
+        if ($this->is_admin == 1) {
             return true;
-
         }
         return false;
     }
 
-    public function diaries(){
-
-
+    public function diaries()
+    {
         return $this->hasMany(Diary::class);
-
     }
 
-    public function reports(){
-
-
+    public function reports()
+    {
         return $this->hasMany('App\Report');
-
-
     }
 
-    public  function forUser(){
+    public  function forUser()
+    {
         return $this->hasMany(DiaryRepository::class);
     }
 
-    public function trials(){
-
-
+    public function trials()
+    {
         return $this->hasMany('App\Trials');
-
-
     }
-
 }

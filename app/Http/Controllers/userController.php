@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\User;use App\Diary;
+use App\User;
+use App\Diary;
 use Illuminate\Http\Request;
 use App\Repositories\DiaryRepository;
 use App\Repositories\ReportRepository;
@@ -16,7 +17,6 @@ class userController extends Controller
     {
 
         $this->diaries = $diaries;
-
     }
     /**
      * Display a listing of the resource.
@@ -86,11 +86,11 @@ class userController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
-        $user -> name = $request->get('name');
-        $user -> is_admin = $request->get('is_admin');
-        $user -> email = $request->get('email');
+        $user->name = $request->get('name');
+        $user->is_admin = $request->get('is_admin');
+        $user->email = $request->get('email');
 
-        $user -> save();
+        $user->save();
 
 
         return redirect('/admin/users');

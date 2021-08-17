@@ -16,12 +16,16 @@ class alertDiaryController extends Controller
         $this->middleware('auth');
 
         $this->diaries = $diaries;
-
     }
 
     public function index(Request $request)
     {
-        return view('diary.index',[ 'diaries' => $this->diaries->forUser($request->user())]);
+        return view(
+            'diary.index',
+            [
+                'diaries' => $this->diaries->forUser($request->user())
+            ]
+        );
     }
 
 
@@ -34,10 +38,10 @@ class alertDiaryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'date_bg' =>'required|max:255',
-            'time_bg' =>'required|max:255',
-            'bg_level' =>'required|max:255',
-            'reason_for_bg'=>'required|max:255',
+            'date_bg' => 'required|max:255',
+            'time_bg' => 'required|max:255',
+            'bg_level' => 'required|max:255',
+            'reason_for_bg' => 'required|max:255',
         ]);
 
         $request->user()->diaries()->create([
@@ -55,7 +59,7 @@ class alertDiaryController extends Controller
         ]);
 
         Session::flash('created_diary', 'Your diary entry has been logged');
-        return redirect('/diaries' );
+        return redirect('/diaries');
     }
 
     public function show($id)
@@ -76,24 +80,25 @@ class alertDiaryController extends Controller
     {
 
         $this->validate($request, [
-            'date_bg' =>'required|max:255',
-            'time_bg' =>'required|max:255',
-            'bg_level' =>'required|max:255',
-            'reason_for_bg'=>'required|max:255',
+            'date_bg' => 'required|max:255',
+            'time_bg' => 'required|max:255',
+            'bg_level' => 'required|max:255',
+            'reason_for_bg' => 'required|max:255',
         ]);
+
         $diary = Diary::findOrFail($id);
-        $diary -> date_bg = $request->get('date_bg');
-        $diary -> time_bg = $request->get('time_bg');
-        $diary -> bg_level = $request->get('bg_level');
-        $diary -> reason_for_bg = $request->get('reason_for_bg');
-        $diary -> treatment = $request->get('treatment');
-        $diary -> symptoms = $request->get('symptoms');
-        $diary -> alert_type = $request->get('alert_type');
-        $diary -> activity = $request->get('activity');
-        $diary -> missed_alert = $request->get('missed_alert');
-        $diary -> in_range = $request->get('in_range');
-        $diary -> notes = $request->get('notes');
-        $diary -> save();
+        $diary->date_bg = $request->get('date_bg');
+        $diary->time_bg = $request->get('time_bg');
+        $diary->bg_level = $request->get('bg_level');
+        $diary->reason_for_bg = $request->get('reason_for_bg');
+        $diary->treatment = $request->get('treatment');
+        $diary->symptoms = $request->get('symptoms');
+        $diary->alert_type = $request->get('alert_type');
+        $diary->activity = $request->get('activity');
+        $diary->missed_alert = $request->get('missed_alert');
+        $diary->in_range = $request->get('in_range');
+        $diary->notes = $request->get('notes');
+        $diary->save();
 
         Session::flash('updated_diary', 'Your diary entry has been edited');
         return redirect('/diaries');

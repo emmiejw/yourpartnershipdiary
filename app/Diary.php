@@ -29,13 +29,8 @@ class Diary extends Model
         'user_id' => 'int',
     ];
 
-
-
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
-
-
-
-
 }

@@ -42,7 +42,7 @@
                         <thead>
                             <tr>
                                 <th>Edit</th>
-                                <th>Date & Time of BG</th>                                
+                                <th>Date & Time of BG</th>
                                 <th>BG Level (mmols)</th>
                                 <th>Reason for BG</th>
                                 <th>Any Treatment needed?</th>
@@ -57,33 +57,33 @@
                         <tbody>
                             @foreach ($diaries as $diary)
                             <tr>
-                                <td><a href="{{route('diaries.edit', $diary->id)}}" class="btn btn-danger"><i class="fa fa-edit"></i></a></td>
+                                <td><a href="{{route('diaries.edit', $diary->id)}}" class="btn btn-danger"><i
+                                            class="fa fa-edit"></i></a></td>
                                 <td>
-                                        {{  date('d/m/Y', strtotime($diary->date_bg)) }}
-                                        <br/>
-                                        {{ date('h:i a', strtotime($diary->time_bg)) }}
+                                    {{  date('d/m/Y', strtotime($diary->date_bg)) }}
+                                    <br />
+                                    {{ date('h:i a', strtotime($diary->time_bg)) }}
                                 </td>
-                                @if ($diary->bg_level <= 5)
-                                    <td id="BG" style="font-weight:bold; color:red;">
+                                @if ($diary->bg_level <= 5) <td id="BG" style="font-weight:bold; color:red;">
+                                    {{number_format($diary->bg_level, 1) }}
+                                    </td>
+                                    @elseif ($diary->bg_level >= 10)
+                                    <td id="BG" style="font-weight:bold; color:blue;">
                                         {{number_format($diary->bg_level, 1) }}
                                     </td>
-                                @elseif ($diary->bg_level >= 10)
-                                <td id="BG" style="font-weight:bold; color:blue;">
-                                    {{number_format($diary->bg_level, 1) }}
-                                </td>
-                                @else
+                                    @else
                                     <td id="BG" style="font-weight:bold;">
                                         {{number_format($diary->bg_level, 1) }}
-                                    </td>                                                    
-                                @endif
-                                <td>{{$diary->reason_for_bg}}</td>
-                                <td>{{$diary->treatment}}</td>
-                                <td>{{$diary->symptoms}}</td>
-                                <td>{{$diary->alert_type}}</td>
-                                <td>{{$diary->activity}}</td>
-                                <td>{{$diary->missed_alert}}</td>
-                                <td>{{$diary->in_range}}</td>
-                                <td>{{$diary->notes}}</td>
+                                    </td>
+                                    @endif
+                                    <td>{{$diary->reason_for_bg}}</td>
+                                    <td>{{$diary->treatment}}</td>
+                                    <td>{{$diary->symptoms}}</td>
+                                    <td>{{$diary->alert_type}}</td>
+                                    <td>{{$diary->activity}}</td>
+                                    <td>{{$diary->missed_alert}}</td>
+                                    <td>{{$diary->in_range}}</td>
+                                    <td>{{$diary->notes}}</td>
                             </tr>
                             @endforeach
                         </tbody>
